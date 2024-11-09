@@ -1,5 +1,9 @@
 import React from 'react';
 import { Product } from '../types';
+import { Link } from '@/components/ui/link';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { paths } from '@/config/paths';
 
 interface ProductCardProps {
   product: Product;
@@ -25,13 +29,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <div className="text-sm">{product.description}</div>
             </header>
           </div>
-          <div className="flex flex-wrap justify-between items-center">
+          <div className="flex flex-wrap justify-between items-center mb-4">
             <div className="flex items-center space-x-2 mr-2">
               <div className="flex space-x-1">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span key={star}>
                     <svg
-                      className={`fill-current ${star <= product.rating ? 'text-yellow-500' : 'text-gray-300 dark:text-gray-600'}`}
+                      className={`fill-current ${
+                        star <= product.rating
+                          ? 'text-yellow-500'
+                          : 'text-gray-300 dark:text-gray-600'
+                      }`}
                       width="16"
                       height="16"
                       viewBox="0 0 16 16"
@@ -53,6 +61,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </div>
             </div>
           </div>
+          <Link className="w-full" to={paths.app.product.getHref(product.id)}>
+            <Button className="w-full group" variant="outline">
+              View Details
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
