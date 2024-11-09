@@ -2,7 +2,6 @@ import React from 'react';
 import { Product } from '../types';
 import { Link } from '@/components/ui/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { paths } from '@/config/paths';
 
 interface ProductCardProps {
@@ -64,7 +63,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <Link className="w-full" to={paths.app.product.getHref(product.id)}>
             <Button className="w-full group" variant="outline">
               View Details
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>

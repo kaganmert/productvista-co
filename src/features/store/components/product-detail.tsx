@@ -2,6 +2,15 @@ import { useState } from 'react';
 import { Star, Calendar } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
+
 import { Product } from '../types';
 
 export default function ProductDetail({ product }: { product: Product }) {
@@ -9,6 +18,19 @@ export default function ProductDetail({ product }: { product: Product }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <div className="mb-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{product.name}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <div className="relative aspect-square overflow-hidden rounded-lg">
