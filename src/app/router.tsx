@@ -35,9 +35,10 @@ export const createAppRouter = (queryClient: QueryClient) =>
         {
           path: paths.app.store.path,
           lazy: async () => {
-            const { StoreRoute } = await import('./routes/app/store');
+            const { StoreRoute, productsLoader } = await import('./routes/app/store');
             return {
               Component: StoreRoute,
+              loader: productsLoader(queryClient),
             };
           },
           ErrorBoundary: AppRootErrorBoundary,
