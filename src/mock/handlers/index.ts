@@ -1,11 +1,11 @@
-import { http, HttpResponse } from "msw";
+import { http, HttpResponse } from 'msw';
 
-import { env } from "../../config/env";
+import { env } from '../../config/env';
 
-import { networkDelay } from "../utils";
+import { networkDelay } from '../utils';
 
-import { authHandlers } from "./authHandlers";
-import { productHandlers } from "./productHandlers";
+import { authHandlers } from './authHandlers';
+import { productHandlers } from './productHandlers';
 
 export const handlers = [
   ...authHandlers,

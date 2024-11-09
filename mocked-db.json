@@ -1,0 +1,38 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "username": "user",
+      "password": "2691749284"
+    }
+  ],
+  "product": [
+    {
+      "id": "1",
+      "name": "Product 1",
+      "description": "Product 1 Description",
+      "price": 100,
+      "rating": 4.5,
+      "comments": [],
+      "images": [
+        "https://via.placeholder.com/300",
+        "https://via.placeholder.com/300/0000FF"
+      ],
+      "arrivalDate": "12.12.2024"
+    },
+    {
+      "id": "2",
+      "name": "Product 2",
+      "description": "Product 2 Description",
+      "price": 200,
+      "rating": 4,
+      "comments": [],
+      "images": [
+        "https://via.placeholder.com/300",
+        "https://via.placeholder.com/300/FF0000"
+      ],
+      "arrivalDate": "12.12.2024"
+    }
+  ],
+  "comment": []
+}
