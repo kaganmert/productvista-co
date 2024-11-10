@@ -4,7 +4,6 @@ export interface Product {
   description: string;
   price: number;
   rating: number;
-  comments: any[];
   images: string[];
   arrivalDate: string;
 }
