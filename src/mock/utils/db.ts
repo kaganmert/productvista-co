@@ -20,10 +20,11 @@ const models = {
   },
   comment: {
     id: primaryKey(nanoid),
-    productId: String,
     text: String,
     rating: Number,
-    createdAt: String,
+    productId: String,
+    username: String,
+    createdAt: Date,
   },
 };
 

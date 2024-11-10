@@ -21,5 +21,9 @@ export const paths = {
       path: '',
       getHref: () => '/shop',
     },
+    product: {
+      path: 'products/:productId',
+      getHref: (id: string) => `/shop/products/${id}`,
+    },
   },
 } as const;
