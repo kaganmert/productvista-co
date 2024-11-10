@@ -70,3 +70,17 @@ export const useInfiniteComments = ({ productId }: UseCommentsOptions) => {
     ...getInfiniteCommentsQueryOptions(productId),
   });
 };
+
+export const useAverageRating = (productId: string) => {
+  const { data: commentsData } = useQuery({
+    ...getCommentsQueryOptions(productId),
+    select: (data) => {
+      if (!data?.data.length) return 0;
+
+      const totalRating = data.data.reduce((sum, comment) => sum + comment.rating, 0);
+      return totalRating / data.data.length;
+    },
+  });
+
+  return commentsData ?? 0;
+};

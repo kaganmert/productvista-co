@@ -24,10 +24,6 @@ export const CreateCommentForm = ({ productId, onSuccess }: CreateCommentFormPro
       onSuccess: () => {
         setRating(0);
         onSuccess?.();
-        addNotification({
-          type: 'success',
-          title: 'Review submitted successfully',
-        });
       },
       onError: () => {
         addNotification({

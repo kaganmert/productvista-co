@@ -1,5 +1,4 @@
 import { Star, Calendar } from 'lucide-react';
-
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Breadcrumb,
@@ -12,8 +11,11 @@ import {
 
 import { Product } from '../types';
 import { ImageSlider } from '@/components/ui/slider';
+import { useAverageRating } from '@/features/comments/api/get-comments';
 
 export default function ProductDetail({ product }: { product: Product }) {
+  const averageRating = useAverageRating(product.id);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-4">
@@ -43,14 +45,12 @@ export default function ProductDetail({ product }: { product: Product }) {
                 <Star
                   key={i}
                   className={`w-5 h-5 ${
-                    i < Math.floor(product.rating)
-                      ? 'text-yellow-400 fill-current'
-                      : 'text-gray-300'
+                    i < Math.floor(averageRating) ? 'text-yellow-400 fill-current' : 'text-gray-300'
                   }`}
                 />
               ))}
             </div>
-            <span className="text-sm text-gray-500">({product.rating.toFixed(1)})</span>
+            <span className="text-sm text-gray-500">({averageRating.toFixed(1)})</span>
           </div>
           <p className="text-2xl font-bold">${product.price.toFixed(2)}</p>
           <p className="text-gray-600">{product.description}</p>
