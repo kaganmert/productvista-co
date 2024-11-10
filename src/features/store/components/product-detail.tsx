@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/breadcrumb';
 
 import { Product } from '../types';
+import { CommentSection } from './comment-section';
 
 export default function ProductDetail({ product }: { product: Product }) {
   const [mainImage, setMainImage] = useState(product.images[0]);
@@ -81,6 +82,7 @@ export default function ProductDetail({ product }: { product: Product }) {
           </Card>
         </div>
       </div>
+      <CommentSection comments={product.comments} />
     </div>
   );
 }
