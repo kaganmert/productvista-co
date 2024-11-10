@@ -56,15 +56,12 @@ export const useCreateComment = ({
         createdAt: new Date().toISOString(),
       };
 
-      queryClient.setQueryData<CommentsResponse>(
-        commentsQueryKey,
-        (old) => ({
-          data: old?.data ? [optimisticComment, ...old.data] : [optimisticComment],
-          meta: {
-            total: (old?.meta.total || 0) + 1
-          }
-        })
-      );
+      queryClient.setQueryData<CommentsResponse>(commentsQueryKey, (old) => ({
+        data: old?.data ? [optimisticComment, ...old.data] : [optimisticComment],
+        meta: {
+          total: (old?.meta.total || 0) + 1,
+        },
+      }));
 
       return { previousComments };
     },
