@@ -1,50 +1,144 @@
-# React + TypeScript + Vite
+# ProductVista 🛍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ProductVista is an application built with React, TypeScript, and Vite. It features product listings, detailed product views, user authentication, and a review system.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (login/logout)
+- Product listing and details
+- Image slider for product images
+- Rating and review system
+- Optimistic updates for better UX
+- Responsive design
+- E2E testing with Cypress
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Vite
+- TanStack Query (React Query)
+- MSW (Mock Service Worker)
+- Tailwind CSS
+- Cypress
 
-- Configure the top-level `parserOptions` property like this:
+## 🏃‍♂️ Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (v18 or higher)
+- pnpm
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/kaganmert/productvista-co.git
+cd productvista-co
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+pnpm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Running the Application
+
+1. Start the development server
+
+```bash
+pnpm run dev
+```
+
+2. Start the mock server (in a separate terminal)
+
+```bash
+pnpm run mock-server
+```
+
+The application will be available at `http://localhost:3000`
+The mock server will be available at `http://localhost:8080`
+
+## 🧪 Testing
+
+## 📝 TEST Documentation Link
+
+Read me at:
+https://github.com/kaganmert/productvista-co/tree/master/cypress
+
+### Running E2E Tests
+
+Ensure both development and mock servers are running:
+
+Terminal 1:
+`pnpm run dev`
+
+Terminal 2:
+`pnpm run mock-server`
+
+** Run the Cypress tests:**
+
+`pnpm run cy:run-e2e`
+
+### Test Coverage
+
+The E2E tests cover:
+
+- Authentication flow (login/logout)
+- Product listing and details
+- Comment system
+- Navigation and routing
+- Error states and loading states
+
+## 📁 Project Structure
+
+src/
+├── cypress/ # e2e tests
+├── features/ # Feature-based modules
+│ ├── auth/ # Authentication related
+│ ├── store/ # Store/product related
+│ └── comments/ # Comments/reviews related
+├── lib/ # Utility functions and hooks
+├── mocks/ # MSW mock handlers
+└── types/ # TypeScript type definitions
+
+```
+
+## 🔑 Authentication
+
+The application uses token-based authentication with cookies. Default test credentials:
+- Username: `user`
+- Password: `user123`
+
+## 📝 API Documentation
+
+The application uses MSW to mock API endpoints:
+
+- `GET /products` - Get all products
+- `GET /products/:id` - Get product details
+- `GET /comments` - Get product comments
+- `POST /comments` - Create a new comment
+- `POST /auth/login` - User authentication
+- `POST /auth/logout` - User logout
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [MSW](https://mswjs.io/) for API mocking
+- [Cypress](https://www.cypress.io/) for E2E testing
+- [TanStack Query](https://tanstack.com/query/latest) for data fetching
+
+## 💡 Additional Information
+
+- The application uses optimistic updates for a better user experience
+- All API calls are mocked using MSW
+- The project follows a feature-based architecture
+- Components use Tailwind CSS for styling
+
+For more information or questions, please open an issue or submit a pull request.
 ```
