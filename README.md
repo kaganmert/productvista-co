@@ -66,7 +66,7 @@ The mock server will be available at `http://localhost:8080`
 ## 📝 TEST Documentation Link
 
 Read me at:
-https://github.com/kaganmert/productvista-co/tree/master/cypress
+https://github.com/kaganmert/productvista-co/tree/master/cypress/e2e
 
 ### Running E2E Tests
 
@@ -78,7 +78,7 @@ Terminal 1:
 Terminal 2:
 `pnpm run mock-server`
 
-** Run the Cypress tests:**
+Run the Cypress tests:
 
 `pnpm run cy:run-e2e`
 
@@ -91,20 +91,6 @@ The E2E tests cover:
 - Comment system
 - Navigation and routing
 - Error states and loading states
-
-## 📁 Project Structure
-
-src/
-├── cypress/ # e2e tests
-├── features/ # Feature-based modules
-│ ├── auth/ # Authentication related
-│ ├── store/ # Store/product related
-│ └── comments/ # Comments/reviews related
-├── lib/ # Utility functions and hooks
-├── mocks/ # MSW mock handlers
-└── types/ # TypeScript type definitions
-
-```
 
 ## 🔑 Authentication
 
