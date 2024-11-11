@@ -29,29 +29,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </header>
           </div>
           <div className="flex flex-wrap justify-between items-center mb-4">
-            <div className="flex items-center space-x-2 mr-2">
-              <div className="flex space-x-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <span key={star}>
-                    <svg
-                      className={`fill-current ${
-                        star <= product.rating
-                          ? 'text-yellow-500'
-                          : 'text-gray-300 dark:text-gray-600'
-                      }`}
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M10 5.934L8 0 6 5.934H0l4.89 3.954L2.968 16 8 12.223 13.032 16 11.11 9.888 16 5.934z" />
-                    </svg>
-                  </span>
-                ))}
-              </div>
-              <div className="inline-flex text-sm font-medium text-yellow-600">
-                {product.rating}
-              </div>
-            </div>
             <div>
               <div
                 className={`inline-flex text-sm font-medium bg-green-500/20 text-green-700 rounded-full text-center px-2 py-0.5`}

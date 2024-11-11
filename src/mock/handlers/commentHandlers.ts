@@ -55,7 +55,7 @@ export const commentHandlers = [
 
       const comment = db.comment.create({
         id: nanoid(),
-        username: user.username,
+        username: user?.username,
         createdAt: new Date().toISOString(),
         ...data,
       });
@@ -84,7 +84,7 @@ export const commentHandlers = [
             equals: commentId,
           },
           username: {
-            equals: user.username,
+            equals: user?.username,
           },
         },
       });

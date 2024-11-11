@@ -24,8 +24,6 @@ describe('Store Page', () => {
 
         cy.get('.text-green-700').should('contain', '$');
 
-        cy.get('.text-yellow-600').should('exist');
-
         cy.get('button').should('contain', 'View Details');
       });
   });
@@ -51,23 +49,6 @@ describe('Store Page', () => {
           .then((text) => {
             const count = parseInt(text.split(' ')[0]);
             expect(count).to.equal(uiCount);
-          });
-      });
-  });
-
-  it('should display correct star ratings', () => {
-    cy.get('.col-span-full')
-      .first()
-      .within(() => {
-        cy.get('.text-yellow-500')
-          .its('length')
-          .then((filledStars) => {
-            cy.get('.text-yellow-600')
-              .invoke('text')
-              .then((rating) => {
-                const ratingNumber = parseFloat(rating);
-                expect(filledStars).to.equal(Math.floor(ratingNumber));
-              });
           });
       });
   });

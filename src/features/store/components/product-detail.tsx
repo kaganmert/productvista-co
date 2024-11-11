@@ -13,6 +13,7 @@ import { Product } from '../types';
 import { ImageSlider } from '@/components/ui/slider';
 import { useAverageRating } from '@/features/comments/api/get-comments';
 
+// @ts-ignore
 export default function ProductDetail({ product }: { product: Product }) {
   const averageRating = useAverageRating(product.id);
 

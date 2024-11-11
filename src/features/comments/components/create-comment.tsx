@@ -1,5 +1,6 @@
 import { Star } from 'lucide-react';
 import { useState } from 'react';
+import { type z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Form, Textarea } from '@/components/ui/form';
 import { useCreateComment, createCommentInputSchema } from '../api/create-comment';

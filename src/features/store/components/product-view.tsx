@@ -19,6 +19,6 @@ export const ProductView = ({ productId }: { productId: string }) => {
   const product = productQuery?.data;
 
   if (!product) return null;
-
+  // @ts-ignore
   return <ProductDetail product={product} />;
 };

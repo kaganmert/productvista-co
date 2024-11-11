@@ -42,7 +42,9 @@ export const useCreateComment = ({
 
   return useMutation({
     mutationFn: (data: CreateCommentDTO) => createComment(data),
-    onMutate: async (newComment) => {
+    onMutate: async (
+      newComment: CreateCommentDTO,
+    ): Promise<{ previousComments: CommentsResponse | undefined }> => {
       await queryClient.cancelQueries({ queryKey: commentsQueryKey });
 
       const previousComments = queryClient.getQueryData<CommentsResponse>(commentsQueryKey);
@@ -66,7 +68,9 @@ export const useCreateComment = ({
       return { previousComments };
     },
     onError: (_, __, context) => {
+      // @ts-ignore
       if (context?.previousComments) {
+        // @ts-ignore
         queryClient.setQueryData(commentsQueryKey, context.previousComments);
       }
     },

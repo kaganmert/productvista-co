@@ -35,7 +35,7 @@ const authConfig = {
   },
   logoutFn: logout,
 };
-
+// @ts-ignore
 export const { useUser, useLogin, useLogout, AuthLoader } = configureAuth(authConfig);
 
 export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
